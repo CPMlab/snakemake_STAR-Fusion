@@ -14,7 +14,7 @@ rule star_fusion:
     params:
         reflib = config['star_fusion']['reflib'],
         out_dir = path.join(fusion_dir, '{sample}'),
-        options = format_options(config['star_align']['options'])
+        options = format_options(config['star_fusion']['options'])
     conda:
         path.join(pipe_path, 'envs/star_fusion.yaml')
     threads:
@@ -25,8 +25,8 @@ rule star_fusion:
         if config["options"]["paired"]:
         	shell('STAR-Fusion {params.options} --left_fq {input.fq[0]} --right_fq {input.fq[1]} '
         		  '--genome_lib_dir {params.reflib} '
-        		  '--CPU {params.threads} --output_dir {params.out_dir} 2> {log}')
+        		  '--CPU {threads} --output_dir {params.out_dir} 2> {log}')
         else:
         	shell('STAR-Fusion {params.options} --left_fq {input.fq} '
         		  '--genome_lib_dir {params.reflib} '
-        		  '--CPU {params.threads} --output_dir {params.out_dir} 2> {log}')
+        		  '--CPU {threads} --output_dir {params.out_dir} 2> {log}')

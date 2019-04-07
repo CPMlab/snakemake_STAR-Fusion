@@ -1,4 +1,4 @@
-if config["options"]["paired"]:
+if is_paired:
 
     rule fastqc:
         input:

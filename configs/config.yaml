@@ -2,8 +2,8 @@ options:
     # paired for single-end reads
     paired: True
 
-# sample input file
-samples: '/DATA/projects/j.bhin/organoid-GC/RNAseq/test.RNA.txt'
+# path of the file with sample list
+samples: '/DATA/projects/j.bhin/organoid-GC/RNAseq/samples_paired.tsv'
 
 
 ################################################################################
@@ -11,8 +11,8 @@ samples: '/DATA/projects/j.bhin/organoid-GC/RNAseq/test.RNA.txt'
 ################################################################################
 
 path:
-  default: '/DATA/projects/j.bhin/organoid-GCs/RNAseq'
-  pipeline: '/home/j.bhin/pipelines/STAR_Fusion'
+  data: '/DATA/projects/j.bhin/organoid-GC/RNAseq'
+  pipeline: '/home/j.bhin/pipelines/STAR-Fusion'
 
 
 star_fusion:

@@ -14,20 +14,15 @@ is_paired = config["options"]["paired"]
 
 
 # default path for analysis
-data_path = config["path"]["default"]
+data_path = config["path"]["data"]
 pipe_path = config["path"]["pipeline"]
 
 # directory for output files
 fastq_dir = path.join(data_path, 'raw')
-bam_dir = path.join(data_path, 'bam')
-star_fusion_dir = path.join(data_path, 'star_fusion')
-fusion_inspector_dir = path.join(data_path, 'fusion_inspector')
+fusion_dir = path.join(data_path, 'star_fusion')
 
 qc_dir = path.join(data_path, 'qc')
 log_dir = path.join(data_path, 'log')
-
-rsem_dir = path.join(data_path, 'rsem')
-feature_counts_dir = path.join(data_path, 'fcounts')
 
 
 ################################################################################
@@ -46,7 +41,8 @@ def format_options(options):
 ################################################################################
 rule all:
      input:
-         expand(path.join(rsem_dir, '{sample}.genes.results'), sample = get_samples())
+         expand(path.join(fusion_dir, '{sample}', 'FusionInspector-validate/finspector.fusion_predictions.final'), 
+         	sample = get_samples())
 
 
 include: path.join(pipe_path, 'rules/qc.smk')
