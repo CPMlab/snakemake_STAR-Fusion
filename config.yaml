@@ -1,0 +1,24 @@
+options:
+    # paired for single-end reads
+    paired: True
+
+# sample input file
+samples: '/DATA/projects/j.bhin/organoid-GC/RNAseq/test.RNA.txt'
+
+
+################################################################################
+# Path configuration                                                           
+################################################################################
+
+path:
+  default: '/DATA/projects/j.bhin/organoid-GCs/RNAseq'
+  pipeline: '/home/j.bhin/pipelines/STAR_Fusion'
+
+
+star_fusion:
+  reflib: /DATA/projects/fgfr2/cell-lines/fusions/GRCh38_v27_CTAT_lib_Feb092018/ctat_genome_lib_build_dir
+  threads: 6
+  options:
+    - --FusionInspector validate
+    - --denovo_reconstruct
+    - --examine_coding_effect
