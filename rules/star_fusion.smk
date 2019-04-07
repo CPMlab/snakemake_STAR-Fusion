@@ -1,8 +1,8 @@
 def align_inputs(wildcards):
 
-    fastq_path = path.join(fastq_dir, "{sample}{{pair}}.fastq.gz".format(
+    fastq_path = path.join(fastq_dir, "{sample}_{{pair}}.fastq.gz".format(
         sample = wildcards.sample))
-    pairs = ["_1", "_2"] if is_paired else [""]
+    pairs = ["R1", "R2"] if is_paired else [""]
     return expand(fastq_path, pair=pairs)
 
 

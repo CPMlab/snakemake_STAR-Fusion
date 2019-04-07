@@ -16,7 +16,7 @@ if config["options"]["paired"]:
     rule multiqc:
         input:
             expand(path.join(qc_dir, 'fastqc', '{sample}_{pair}_fastqc.zip'),
-                   sample=get_samples(), pair=['1', '2'])
+                   sample=get_samples(), pair=['R1', 'R2'])
         output:
             path.join(qc_dir, 'multiqc_report.html')
         params:
