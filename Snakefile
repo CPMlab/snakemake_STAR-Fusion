@@ -42,7 +42,9 @@ def format_options(options):
 rule all:
      input:
          expand(path.join(fusion_dir, '{sample}', 'FusionInspector-validate/finspector.fusion_predictions.final'), 
-         	sample = get_samples())
+         	sample = get_samples()),
+         path.join(qc_dir, 'multiqc_report.html')
+
 
 
 include: path.join(pipe_path, 'rules/qc.smk')
