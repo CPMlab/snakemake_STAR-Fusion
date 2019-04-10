@@ -3,7 +3,7 @@ options:
     paired: True
 
 # path of the file with sample list
-samples: '/DATA/projects/j.bhin/organoid-GC/RNAseq/samples_paired.tsv'
+samples: '/DATA/projects/j.bhin/organoid-GC/RNAseq/test.tsv'
 
 
 ################################################################################
@@ -17,7 +17,7 @@ path:
 
 star_fusion:
   reflib: /DATA/projects/fgfr2/cell-lines/fusions/GRCh38_v27_CTAT_lib_Feb092018/ctat_genome_lib_build_dir
-  threads: 6
+  threads: 8
   options:
     - --FusionInspector validate
     - --denovo_reconstruct

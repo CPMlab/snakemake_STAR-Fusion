@@ -5,6 +5,12 @@ channels:
   - bioconda
 
 dependencies:
-  - star =2.6.1d
   - star-fusion =1.5.0
+  - star =2.6.1d
   - trinity =2.8.4
+  - perl-set-intervaltree
+  - perl-db-file
+  - perl-uri
+  - perl-carp
+  - perl-json
+  - perl-perlio-gzip
