@@ -16,6 +16,8 @@ The following software and Python libraries are required:
 ## Pipeline Structure
 The pipeline consists of the following Snakemake rules:
 
+![image](https://github.com/user-attachments/assets/5d21dc13-2e28-4586-a6bb-13ca309bee27)
+
 ### 1. `rule all`
 Defines the final output, ensuring that fusion detection and quality control reports are successfully generated.
 - **Output Files**:
